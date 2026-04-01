@@ -1,0 +1,14 @@
+# Lightweight Python base image
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy script
+COPY stress_test.py .
+
+# Enable real-time logs
+ENV PYTHONUNBUFFERED=1
+
+# Run the attack script
+CMD ["python", "stress_test.py"]
